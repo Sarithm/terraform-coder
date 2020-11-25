@@ -14,11 +14,11 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run: my-custom-command arg1 arg2
+      - run: echo "*******preview******"
       - init
       - plan:
           extra_args: ["-lock", "false"]
-      - run: my-custom-command arg1 arg2
+      - run: echo "****look for errors closely***"
     apply:
       steps:
       - run: echo hi
