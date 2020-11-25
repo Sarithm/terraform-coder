@@ -16,5 +16,3 @@ Clone this project, submit PR along with README to run your terraform  code.
     Update security group(s), to access MYSQL Aurora cluster from EC2 instances created by Autoscaling group.
 
     **Bonus**:  Create code to write VPC module with 3 private,  3 public subnets  and host above infrastructure in it. 
-
-    
