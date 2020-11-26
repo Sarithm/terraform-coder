@@ -14,7 +14,7 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run: terraform init -input=false 
+      - run: "terraform init -input=false;terraform workspace select mgmt; terraform plan -input=false"
       - init
       - plan:
           extra_args: ["-lock", "false"]
