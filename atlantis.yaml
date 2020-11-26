@@ -1,25 +1,4 @@
 version: 3
-automerge: true
 projects:
-- name: terraform-coder
-  dir: .
-  workspace: mgmt
-  terraform_version: v0.13.5
-  autoplan:
-    when_modified: ["*.tf"]
-    enabled: true
-  apply_requirements: [mergeable, approved]
-  workflow: myworkflow
-workflows:
-  myworkflow:
-    plan:
-      steps:
-      - run: "terraform init -input=false;terraform workspace select mgmt; terraform plan -input=false"
-      - init
-      - plan:
-          extra_args: ["-lock", "false"]
-      - run: echo "****look for errors closely***"
-    apply:
-      steps:
-      - run: echo hi
-      - apply
+- dir: .
+  workflow: mgmt
